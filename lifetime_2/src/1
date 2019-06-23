@@ -1,0 +1,25 @@
+struct Tweet <'a, T> {
+    tweet1: &'a T,
+    tweet2: &'a T,
+}
+
+fn largest<'a, T>(tweet1: &'a T, tweet2: &'a T)->&'a T {
+    where T: Display
+    if tweet1.len() > tweet2.len() {
+        println!("{}", tweet1);
+        tweet1
+    } else {
+        println!("{}", tweet2);
+        tweet2
+    }
+
+}
+
+fn main() {
+   let my_str1 = String::from("Hi this is Paaras");
+   let my_str2 = String::from("HI this is mehak");
+
+   let my_tweet = Tweet{tweet1: &my_str1, tweet2: &my_str2};
+
+   let largest_tweet = largest(my_tweet.tweet1.to_str(), my_tweet.tweet2.to_str());
+}

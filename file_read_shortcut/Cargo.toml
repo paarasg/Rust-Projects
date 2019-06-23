@@ -1,0 +1,7 @@
+[package]
+name = "file_read_shortcut"
+version = "0.1.0"
+authors = ["osboxes"]
+edition = "2018"
+
+[dependencies]

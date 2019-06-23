@@ -1,0 +1,24 @@
+pub trait Summery {
+    fn summerize(&self)->String;
+}
+
+struct Tweet {
+    name: String,
+    info: String,
+    address: String,
+}
+
+impl Summery for Tweet {
+    fn summerize(&self)->String {
+        format!("{} {} {}", self.name, self.info, self.address);
+    }
+}
+
+fn main() {
+    let new_tweet = Tweet{
+                        name: String::from("Paaras"),
+                        info: String::from("self"),
+                        address: String::from("Balewadi"),
+                    };
+    new_tweet.summerize();
+}
